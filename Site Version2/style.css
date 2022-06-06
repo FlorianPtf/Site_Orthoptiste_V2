@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+
+:root{
+    --couleur1: rgb(211, 228, 205);
+    --couleur2: rgb(153, 167, 153);
+    --couleur3: rgb(242, 221, 193);
+    --couleur4: rgb(226, 194, 185);
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    height: 100vh;
+}
+
+body::-webkit-scrollbar-track
+{
+	background-color: var(--couleur2);
+	border-radius: 10px;
+}
+
+body::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: var(--couleur2);
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0, var(--couleur4)),
+									   color-stop(0.6, var(--couleur4)),
+									   color-stop(1, var(--couleur4)));
+}
+
+/***********************************************************************************************************************************
+************************************************   ANIMATION CARD APPEAR    ********************************************************
+***********************************************************************************************************************************/
+
+@keyframes transitioncardin{
+    from {
+        opacity:0;
+        transform:translateY(8rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+/***********************************************************************************************************************************
+*******************************************************   HEADER    ****************************************************************
+***********************************************************************************************************************************/
+
+
+header{
+    background: var(--couleur2);
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 100;
+    box-shadow: 0 5px 60px rgba(0,0,0,0.5);
+}
+
+header .logo img{
+    display: inline-block;
+    position: relative;
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+    width: 150px;
+    height: auto;
+}
+
+header .logo:hover {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+header .navbar ul{
+    list-style: none;
+
+}
+
+header .navbar ul li{
+    display: inline-block;
+    position:relative;
+    color: var(--couleur3);
+    margin-left: 50px;
+}
+
+header .navbar ul li a{
+    display: flex;
+    justify-content: space-between;
+    color: var(--couleur3);
+    font-size: 22px;
+}
+
+header .navbar ul li a:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--couleur3);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+header .navbar ul li:hover a:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/***********************************************************************************************************************************
+***********************************************   DESCRIPTION ORTHOPTIE    *********************************************************
+***********************************************************************************************************************************/
+
+.box-container2{
+    height: 50vh;
+    background: linear-gradient(90deg, rgba(211,228,205,1) 0%, rgba(153,167,153,1) 100%);
+}
+
+.box-container2 .box2 .titleortho{
+    display: flex;
+    justify-content: center;
+    font-size: 54px;
+    font-weight: 700;
+    color: white;
+}
+
+.box-container2 .box2-img img{
+    position: absolute;
+    pointer-events: none;
+    width: 20%;
+    height: auto;
+}
+
+.box-container2 .box2-complete .box2-milieu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 1%;
+}
+
+.box-container2 .box2-complete .box2-milieu h3{
+    display: flex;
+    color: white;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.box-container2 .box2-complete .box2-milieu p{
+    display: flex;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 2%;
+    color: rgb(50, 50, 50);
+}
+
+
+/***********************************************************************************************************************************
+*****************************************************   CARD DETAILS    ************************************************************
+***********************************************************************************************************************************/
+
+
+.box-container{   
+    min-height: 50vh;
+    overflow: hidden; 
+    background: linear-gradient(90deg, rgba(211,228,205,1) 0%, rgba(153,167,153,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    height: 420px;
+    width: 320px;
+    border: 8px solid rgb(128, 128, 128);
+    box-shadow: 0 10px 10px black;
+    overflow: hidden;
+    margin: 2%;
+    animation: transitioncardin 1500ms ease-in-out;
+}
+
+.box:hover{
+    border: 8px solid var(--couleur4);
+}
+
+.box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale();
+}
+
+.box:hover img{
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+}
+
+.box .info{
+    text-align: center;
+    background-color: white;
+    position: relative;
+    bottom: 50px;
+    height: 100%;
+    width: 100%;
+}
+
+.box:hover .info{
+    bottom: 220px;
+    transition: 0.5s ease-in-out;
+}
+
+.box:hover .info hr{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    border:none;
+    border-top: 3px solid var(--couleur4);
+}
+
+.box .info .title{
+    padding: 10px 0;
+    font-size: 20px;
+    color: rgb(39, 39, 39);
+    text-transform: capitalize;
+    font-size: 24px;
+}
+
+.box:hover .info .title{
+    color: var(--couleur4);
+    transition: 0.25s;
+}
+
+
+.box .info .post{
+    font-size: 15px;
+    color: rgb(128, 128, 128);
+    font-size: 22px;
+}
+
+
+
+
+/***********************************************************************************************************************************
+*******************************************************   NOS BILANS    ************************************************************
+***********************************************************************************************************************************/
+
+
+.box-container3com{
+    min-height: 100vh;
+    /* overflow: hidden; */
+    background-size: cover;
+    background-position: 30% 40%;
+    background-image: linear-gradient(0deg, rgba(211, 228, 205, 0), rgba(211, 228, 205, 0)), url("img/bg_ortho3.jpg");
+    border-bottom: 20px solid;
+    border-top: 20px solid;
+    border-image: linear-gradient(90deg, var(--couleur3) 0% , var(--couleur4) 100%) 1;   
+}
+
+.box-container3com p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2%;
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--couleur1);
+}
+
+
+
+.box-container3{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    margin-top: 5%;
+}
+
+.box-container3 .container-card3{
+    position: relative;
+    width: 320px;
+    height: 440px;
+    box-shadow: inset 5px 5px 5px rgb(0, 0, 0),
+                inset -5px -5px -5px rgb(128, 128, 128),
+                5px 5px 5px rgb(0, 0, 0),
+                -5px -5px -5px rgb(128, 128, 128);
+    border-radius: 15px;
+    margin: 30px;
+}
+
+.box-container3 .container-card3 .container-box3{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: white;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.box-container3 .container-card3:hover .container-box3{
+    transform: translateY(-50px);
+    box-shadow: 0 10px 40px rgb(0, 0, 0,0.2);
+    background: linear-gradient(45deg, var(--couleur3), var(--couleur4));
+}
+
+.box-container3 .container-card3 .container-box3 .container-content3{
+    padding: 20px;
+    text-align: center;
+}
+
+.box-container3 .container-card3 .container-box3 .container-content3 h2{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgb(0, 0, 0, 0.05);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.box-container3 .container-card3:hover .container-box3 .container-content3 h2{
+    color: rgb(0, 0, 0, 0.1);
+}
+
+.box-container3 .container-card3 .container-box3 .container-content3 h3{
+    font-size: 1.5em;
+    color: rgb(119, 119, 119);
+    z-index: 1;
+    transition:0.5s;
+}
+
+.box-container3 .container-card3 .container-box3 .container-content3 p{
+    font-size: 1em;
+    font-weight: 300;
+    color:rgb(128, 128, 128);
+    z-index: 1;
+    transition: 0.5s;
+    margin-top: 20px;
+}
+
+.box-container3 .container-card3:hover .container-box3 .container-content3 h3,
+.box-container3 .container-card3:hover .container-box3 .container-content3 p{
+    color: var(--couleur2);
+}
+
+.box-container3 .container-card3 .container-box3 .container-content3 a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--couleur1);
+    margin-top: 50px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.2);
+}
+
+.box-container3 .container-card3:hover .container-box3 .container-content3 a{
+    background: var(--couleur2);
+}
+
+/***********************************************************************************************************************************
+*******************************************************   WAVE ESPACE   ************************************************************
+***********************************************************************************************************************************/
+
+.containerwave {
+    position: relative;
+    background: var(--couleur1);
+    height: 10vh;
+  }
+  
+  .wave {
+    position: absolute;
+    height: 150px;
+    width: 100vw;
+    background: var(--couleur1);
+    bottom: 0;
+  }
+  
+  .wave::before, .wave::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+  }
+  
+  .wave::before {
+    width: 55%;
+    height: 109%;
+    background-color: rgb(255, 255, 255);
+    right: -1.5%;
+    top: 60%;
+    overflow: hidden;
+  }
+
+  .wave::after {
+    width: 55%;
+    height: 100%;
+    background: var(--couleur1);
+    left: -1.5%;
+    top: 40%;
+  }
+
+/***********************************************************************************************************************************
+****************************************************   NOS REEDUCATIONS    *********************************************************
+***********************************************************************************************************************************/
+
+.box-container4com{
+    min-height: 100vh;
+    background-size: cover;
+    background-position: fixed;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("img/bg_ortho4.jpg");
+    border-bottom: 20px solid;
+    border-image: linear-gradient(90deg, var(--couleur3) 0% , var(--couleur4) 100%) 1;   
+}
+
+.box-container4com p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--couleur3);
+}
+
+.box-container4{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    padding: 10px 0;
+}
+
+.box-container4 .container-card4{
+    position: relative;
+    width: 640px;
+    height: 260px;
+    box-shadow: inset 5px 5px 5px rgb(0, 0, 0),
+                inset -5px -5px -5px rgb(128, 128, 128),
+                5px 5px 5px rgb(0, 0, 0),
+                -5px -5px -5px rgb(128, 128, 128);
+    border-radius: 15px;
+}
+
+.box-container4 .container-card4 .container-box4{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border: 2px solid var(--couleur3);
+
+}
+
+.box-container4 .container-card4 #optic1{
+    background: url(img/optic_4.jpg);
+    background-position: 50% 50%;
+}
+
+.box-container4 .container-card4 #optic2{
+    background: url(img/optic_5.jpg);
+    background-position: 50% 30%;
+}
+
+.box-container4 .container-card4 #optic3{
+    background: url(img/optic_6.jpg);
+    background-position: 50% 70%;
+}
+
+.box-container4 .container-card4 #optic4{
+    background: url(img/optic_7.jpg);
+    background-position: 50% 25%;
+}
+
+
+.box-container4 .container-card4 #optic5{
+    background: url(img/optic_8.jpg);
+    background-position: 50% 30%;
+}
+
+
+
+
+.box-container4 .container-card4:hover .container-box4{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgb(0, 0, 0,0.2);
+    background: linear-gradient(45deg, var(--couleur3), var(--couleur4));
+}
+
+.box-container4 .container-card4 .container-box4 .container-content4{
+    padding: 20px;
+    text-align: center;
+}
+
+.box-container4 .container-card4 .container-box4 .container-content4 h2{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgb(0, 0, 0, 0.05);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.box-container4 .container-card4:hover .container-box4 .container-content4 h2{
+    color: rgb(0, 0, 0, 0.1);
+}
+
+.box-container4 .container-card4 .container-box4 .container-content4 h3{
+    font-size: 1.5em;
+    color: rgb(49, 49, 49);
+    z-index: 1;
+    transition:0.5s;
+}
+
+.box-container4 .container-card4 .container-box4 .container-content4 p{
+    font-size: 1em;
+    font-weight: 300;
+    color:rgb(49, 49, 49);
+    z-index: 1;
+    transition: 0.5s;
+    margin-top: 20px;
+}
+
+.box-container4 .container-card4:hover .container-box4 .container-content4 h3,
+.box-container4 .container-card4:hover .container-box4 .container-content4 p{
+    color: rgb(0, 0, 0);
+}
+
+.box-container4 .container-card4 .container-box4 .container-content4 a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--couleur1);
+    margin-top: 50px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.2);
+}
+
+.box-container4 .container-card4:hover .container-box4 .container-content4 a{
+    background: var(--couleur2);
+}
+
+
+/***********************************************************************************************************************************
+*****************************************************   PARALLAX EFFECT    *********************************************************
+***********************************************************************************************************************************/
+
+.pimg1{
+    background-image: url(img/Oeil.jpg);
+    min-height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 0.80;
+    background-attachment: fixed;
+
+    /* Media queries 568px =
+    background-attachment: scroll; */
+}
+
+
+/***********************************************************************************************************************************
+********************************************************   CAROUSSEL    ************************************************************
+***********************************************************************************************************************************/
+
+
+.slider{
+    height: 100vh;
+    border-top: 20px solid;
+    border-image: linear-gradient(90deg, var(--couleur3) 0% , var(--couleur4) 100%) 1;   
+    user-select: none;
+}
+
+
+[type=radio]{
+    display: none;
+}
+
+.slider2{
+    height: 35vw;
+    position: relative;
+    margin-top: 8%;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.slider2 label{
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    border-radius: 5%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    transition: transform 1s ease;
+}
+
+#s1:checked ~ #slide4, #s2:checked ~ #slide5,
+#s3:checked ~ #slide1, #s4:checked ~ #slide2,
+#s5:checked ~ #slide3{
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    transform: translate3d(-30%,0,-200px);
+    transition: 1s ease-in-out;
+    opacity: 0.5;
+}
+
+#s1:checked ~ #slide5, #s2:checked ~ #slide1,
+#s3:checked ~ #slide2, #s4:checked ~ #slide3,
+#s5:checked ~ #slide4{
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3), 0 2px 2px 0 rgba(0,0,0,0.2);
+    transform: translate3d(-15%,0,-100px);
+    transition: 1s ease-in-out;
+    opacity: 0.6;
+}
+
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide3, #s4:checked ~ #slide4,
+#s5:checked ~ #slide5{
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,0.3), 0 11px 7px 0 rgba(0,0,0,0.19);
+    transform: translate3d(0,0,0);
+    transition: 1s ease-in-out;
+}
+
+#s1:checked ~ #slide3, #s2:checked ~ #slide4,
+#s3:checked ~ #slide5, #s4:checked ~ #slide1,
+#s5:checked ~ #slide2{
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3);
+    transform: translate3d(30%,0,-200px);  
+    transition: 1s ease-in-out;
+    opacity: 0.5;
+}
+
+#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+#s3:checked ~ #slide4, #s4:checked ~ #slide5,
+#s5:checked ~ #slide1{
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3), 0 2px 2px 0 rgba(0,0,0,0.19);
+    transform: translate3d(15%,0,-100px);
+    transition: 1s ease-in-out;
+    opacity: 0.6;
+}
+
+.slider2 p{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.slider2 img{
+    border-radius: 5%;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+}
+
+
+/***********************************************************************************************************************************
+**********************************************************   CONTACT    ************************************************************
+***********************************************************************************************************************************/
+
+
+.curved {
+    position: relative;
+    background: #ffffff;
+    height: 8vh;
+    border-bottom-left-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
+  }
+
+
+
+.box-container5com{
+    height: 80vh;
+    background-color: var(--couleur1);
+}
+
+.box-container5com h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--couleur2);
+    margin-top: 2%;
+}
+
+.box-container5com h3{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--couleur3);
+    margin-top: 2%;
+}
+
+.box-container5com p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;    
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.box-container5{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.box-container5 #iframe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.box-container5 iframe{
+    width: 500px;
+    height: 260px;
+    border-radius: 20px;
+    border: 10px solid white;
+}
+
+.box-card5{
+    width: 420px;
+    height: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.15);
+    transform: scale3d(1, 1, 1);
+    background: url(img/bg_contact3.jpg);
+    filter: grayscale(0.1) saturate(95%) brightness(95%) contrast(90%);
+}
+
+
+.box-card5:hover {
+    box-shadow: 0 5px 60px rgba(0,0,0,0.4), 0 0 15px rgba(0,0,0,0.3);
+    filter: grayscale(0) saturate(105%) brightness(100%) contrast(100%);
+    transform: scale(1.05);
+    transition: 0.5s ease-in-out;
+}
+
+
+.box-container5 #iframe:hover{
+    box-shadow: 0 5px 60px rgba(0,0,0,0.4), 0 0 15px rgba(0,0,0,0.3);
+    filter: grayscale(0) saturate(105%) brightness(100%) contrast(100%);
+}
+
+
+/***********************************************************************************************************************************
+**********************************************************   FOOTER    *************************************************************
+***********************************************************************************************************************************/
+
+
+.footer{
+    height: 4vh;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0.8;
+    padding-bottom: 1%;
+}
+
+.footer a{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+.curvedfooter {
+    position: relative;
+    background: var(--couleur1);
+    height: 15vh;
+  }
+  
+  .curvedfooter::after {
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    height: 30%;
+  }
