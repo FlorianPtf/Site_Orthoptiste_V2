@@ -40,3 +40,4 @@ slider.addEventListener("mouseout", () => {
 
 
 
+

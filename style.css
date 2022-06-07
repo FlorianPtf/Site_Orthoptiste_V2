@@ -61,6 +61,18 @@ body::-webkit-scrollbar-thumb
     }
 }
 
+@keyframes transitionheaderin{
+    from {
+        opacity:0;
+        transform:translateY(-8rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 
 
@@ -92,11 +104,7 @@ header .logo img{
     font-weight: 500;
     width: 150px;
     height: auto;
-}
-
-header .logo:hover {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    animation: transitionheaderin 1500ms ease-in-out;
 }
 
 header .navbar ul{
@@ -116,6 +124,7 @@ header .navbar ul li a{
     justify-content: space-between;
     color: var(--couleur3);
     font-size: 22px;
+    animation: transitionheaderin 1500ms ease-in-out;
 }
 
 header .navbar ul li a:after{
@@ -151,6 +160,7 @@ header .navbar ul li:hover a:after{
     font-size: 54px;
     font-weight: 700;
     color: white;
+    animation: transitionheaderin 1500ms ease-in-out;
 }
 
 .box-container2 .box2-img img{
@@ -176,6 +186,7 @@ header .navbar ul li:hover a:after{
     color: white;
     justify-content: center;
     font-size: 28px;
+    animation: transitionheaderin 1500ms ease-in-out;
 }
 
 .box-container2 .box2-complete .box2-milieu p{
@@ -184,6 +195,7 @@ header .navbar ul li:hover a:after{
     font-size: 16px;
     margin-bottom: 2%;
     color: rgb(50, 50, 50);
+    animation: transitionheaderin 1500ms ease-in-out;
 }
 
 
@@ -252,10 +264,9 @@ header .navbar ul li:hover a:after{
 
 .box .info .title{
     padding: 10px 0;
-    font-size: 20px;
     color: rgb(39, 39, 39);
     text-transform: capitalize;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .box:hover .info .title{
@@ -265,9 +276,8 @@ header .navbar ul li:hover a:after{
 
 
 .box .info .post{
-    font-size: 15px;
+    font-size: 16px;
     color: rgb(128, 128, 128);
-    font-size: 22px;
 }
 
 
@@ -392,13 +402,168 @@ header .navbar ul li:hover a:after{
     border-radius: 20px;
     color: white;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 500;
     box-shadow: 0 10px 20px rgb(0, 0, 0,0.2);
 }
 
 .box-container3 .container-card3:hover .container-box3 .container-content3 a{
     background: var(--couleur2);
 }
+
+
+/***********************************************************************************************************************************
+*********************************************************   MODAL   ****************************************************************
+***********************************************************************************************************************************/
+
+
+
+.popup1,
+.popup2,
+.popup3,
+.popup4,
+.popup5,
+.popup6,
+.popup7,
+.popup8,
+.popup9
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .50);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hiden;
+    transition: 0.64s ease-in-out;
+}
+.popup-inner {
+    position: relative;
+    bottom: -100vw;
+    right: -100vh;
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    max-height: 600px;
+    width: 60%;
+    height: 80%;
+    background-color: rgb(100, 100, 100);
+    transform: rotate(32deg);
+    transition: 0.64s ease-in-out;
+}
+.popup__photo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+.popup__photo img {
+    width: auto;
+    height: 100%;
+}
+.popup__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    padding: 4rem;
+}
+
+.popup__text a{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 20px;
+    background: var(--couleur1);
+    margin-top: 5%;
+    margin-left: 20%;
+    border-radius: 20px;
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.2);
+    width: 60%;
+}
+
+.popup__text a:hover{
+    background: var(--couleur2);
+    color: white;
+}
+
+.popup__text h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--couleur1);
+}
+.popup__text p {
+    font-size: 14px;
+    color: var(--couleur1);
+    line-height: 1.5;
+}
+.popup1:target,
+.popup2:target,
+.popup3:target,
+.popup4:target,
+.popup5:target,
+.popup6:target,
+.popup7:target,
+.popup8:target,
+.popup9:target
+ {
+    visibility: visible;
+    opacity: 1;
+}
+.popup1:target .popup-inner,
+.popup2:target .popup-inner,
+.popup3:target .popup-inner,
+.popup4:target .popup-inner,
+.popup5:target .popup-inner,
+.popup6:target .popup-inner,
+.popup7:target .popup-inner,
+.popup8:target .popup-inner,
+.popup9:target .popup-inner
+ {
+    bottom: 0;
+    right: 0;
+    transform: rotate(0);
+}
+.popup__close {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: var(--couleur1);
+    z-index: 4;
+    color: rgb(100, 100, 100);
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.popup__close:hover{
+    background: var(--couleur2);
+    color: white;
+}
+
+
+
+
+
 
 /***********************************************************************************************************************************
 *******************************************************   WAVE ESPACE   ************************************************************
@@ -720,7 +885,7 @@ header .navbar ul li:hover a:after{
 
 
 .box-container5com{
-    height: 80vh;
+    height: 60vh;
     background-color: var(--couleur1);
 }
 
