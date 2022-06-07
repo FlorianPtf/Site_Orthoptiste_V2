@@ -332,6 +332,11 @@ header .navbar ul li:hover a:after{
     margin: 30px;
 }
 
+/* .box-container3 .container-card3 .is-inViewport{
+    transform: translateX(0rem);
+    animation: 0.5s ease-in-out;
+} */
+
 .box-container3 .container-card3 .container-box3{
     position: absolute;
     top: 20px;
@@ -425,7 +430,12 @@ header .navbar ul li:hover a:after{
 .popup6,
 .popup7,
 .popup8,
-.popup9
+.popup9,
+.popup10,
+.popup11,
+.popup12,
+.popup13,
+.popup14
 {
     display: flex;
     align-items: center;
@@ -518,7 +528,12 @@ header .navbar ul li:hover a:after{
 .popup6:target,
 .popup7:target,
 .popup8:target,
-.popup9:target
+.popup9:target,
+.popup10:target,
+.popup11:target,
+.popup12:target,
+.popup13:target,
+.popup14:target
  {
     visibility: visible;
     opacity: 1;
@@ -531,7 +546,12 @@ header .navbar ul li:hover a:after{
 .popup6:target .popup-inner,
 .popup7:target .popup-inner,
 .popup8:target .popup-inner,
-.popup9:target .popup-inner
+.popup9:target .popup-inner,
+.popup10:target .popup-inner,
+.popup11:target .popup-inner,
+.popup12:target .popup-inner,
+.popup13:target .popup-inner,
+.popup14:target .popup-inner
  {
     bottom: 0;
     right: 0;
@@ -559,7 +579,6 @@ header .navbar ul li:hover a:after{
     background: var(--couleur2);
     color: white;
 }
-
 
 
 
