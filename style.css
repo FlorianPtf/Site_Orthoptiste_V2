@@ -74,6 +74,49 @@ body::-webkit-scrollbar-thumb
 }
 
 
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromBot{
+    from {
+        opacity:0;
+        transform:translateY(-100%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  .slide-in-from-right {
+    animation: 1.5s ease-out 0s 1 slideInFromRight forwards;
+  }
+  
+  .slide-in-from-left {
+    animation: 1.5s ease-out 0s 1 slideInFromLeft forwards;
+  }
+
+  .slide-in-from-bot {
+    animation: 1s ease-out 0s 1 slideInFromBot forwards;
+  }
+
+
 
 
 
@@ -297,6 +340,8 @@ header .navbar ul li:hover a:after{
     border-bottom: 20px solid;
     border-top: 20px solid;
     border-image: linear-gradient(90deg, var(--couleur3) 0% , var(--couleur4) 100%) 1;   
+    overflow-x: hidden;
+
 }
 
 .box-container3com p{
@@ -634,7 +679,7 @@ header .navbar ul li:hover a:after{
     min-height: 100vh;
     background-size: cover;
     background-position: fixed;
-    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("img/bg_ortho4.jpg");
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("img/bg_ortho5.jpg");
     border-bottom: 20px solid;
     border-image: linear-gradient(90deg, var(--couleur3) 0% , var(--couleur4) 100%) 1;   
 }
@@ -781,13 +826,13 @@ header .navbar ul li:hover a:after{
 ***********************************************************************************************************************************/
 
 .pimg1{
-    background-image: url(img/Oeil.jpg);
+    background-image: url(img/Oeil1.jpg);
     min-height: 50vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    opacity: 0.80;
+    opacity: 0.9;
     background-attachment: fixed;
 
     /* Media queries 568px =
@@ -805,6 +850,7 @@ header .navbar ul li:hover a:after{
     border-top: 20px solid;
     border-image: linear-gradient(90deg, var(--couleur3) 0% , var(--couleur4) 100%) 1;   
     user-select: none;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0) 100%), url("img/bg_ortho6.jpg");
 }
 
 
@@ -904,8 +950,8 @@ header .navbar ul li:hover a:after{
 
 
 .box-container5com{
-    height: 60vh;
-    background-color: var(--couleur1);
+    height: 70vh;
+    background: linear-gradient(90deg, rgba(211,228,205,1) 0%, rgba(153,167,153,1) 100%);
 }
 
 .box-container5com h2{
@@ -918,7 +964,7 @@ header .navbar ul li:hover a:after{
     margin-top: 2%;
 }
 
-.box-container5com h3{
+.box-container5com #about1{
     display: flex;
     justify-content: center;
     text-align: center;
@@ -928,17 +974,29 @@ header .navbar ul li:hover a:after{
     margin-top: 2%;
 }
 
-.box-container5com p{
+.box-container5com ul{  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-container5com li{
     display: flex;
     align-items: center;
-    justify-content: center;
     text-align: justify;    
     font-size: 25px;
     font-weight: 500;
     color: rgb(255, 255, 255);
     margin-top: 5%;
-    margin-left: 5%;
 }
+
+.box-container5com a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
 
 .box-container5{
     display: flex;
@@ -1011,7 +1069,7 @@ header .navbar ul li:hover a:after{
 
 .curvedfooter {
     position: relative;
-    background: var(--couleur1);
+    background: linear-gradient(90deg, rgba(211,228,205,1) 0%, rgba(153,167,153,1) 100%);
     height: 15vh;
   }
   
